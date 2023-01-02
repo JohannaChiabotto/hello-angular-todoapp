@@ -4,7 +4,12 @@
     <p>offene Todos</p>
   </div>
   <div *ngFor="let todo of todos; let i = index">
-    <app-todo [todo]="todo" [index]="i" (todoIndex)="toggleTodo($event)" ></app-todo>
+    <app-todo
+      [todo]="todo"
+      [index]="i"
+      (todoIndex)="toggleTodo($event)"
+      (deleteIndex)="deleteTodo($event)"
+    ></app-todo>
   </div>
 </div>
 

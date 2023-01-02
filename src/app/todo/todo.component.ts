@@ -11,9 +11,14 @@ export class TodoComponent {
   @Input() index = 0;
 
   @Output() todoIndex = new EventEmitter<number>();
+  @Output() deleteIndex = new EventEmitter<number>();
 
   toggleTodo(){
     this.todoIndex.emit(this.index);
+  }
+
+  deleteTodo(){
+    this.deleteIndex.emit(this.index);
   }
 
 }

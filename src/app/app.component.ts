@@ -14,7 +14,11 @@ export class AppComponent {
   ];
 
   toggleTodo(index: number){
-    this.todos[index].done = !this.todos[index].done
+    this.todos[index].done = !this.todos[index].done;
+  }
+
+  deleteTodo(index: number){
+    this.todos.splice(index, 1);
   }
 
   title = 'hello-angular-todoapp';
