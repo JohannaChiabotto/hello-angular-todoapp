@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-todo',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent {
+
+  @Input() todo = {todo: "", done:false};
+  @Input() index = 0;
+
+  @Output() todoIndex = new EventEmitter<number>();
+
+  toggleTodo(){
+    this.todoIndex.emit(this.index);
+  }
 
 }
